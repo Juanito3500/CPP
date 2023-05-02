@@ -9,21 +9,21 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Geneva, Tahoma, sans-serif;
 }
 
 
 body{
     height: 100vh;
     display: flex;
+    background-color: rgb(232, 251, 251);
 }
 
 header{
     width: 100%;
     height: 100%;
-    background-color: rgb(241, 249, 249);
-    background-image: url('./Assets/Imagenes/Imagen\ Presentacion.svg');
     
+    background-image: url('./Assets/Imagenes/Imagen\ Presentacion.svg');
 }
 
 nav{
@@ -35,6 +35,7 @@ nav{
     align-items: center;
     justify-content: space-evenly;
     padding: 0 1vw;
+    
 }
 
 #Contenedor-Logo-Titulo{
@@ -69,7 +70,7 @@ nav{
 
 
 .boton-barra-navegacion{
-    font-size: 0.9vw;
+    font-size: 1vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -79,5 +80,98 @@ nav{
     max-width: 12%;
     height: 60%;
     border: 2px solid rgb(80,0,0);
-    border-radius: 1vw;
+    color: rgb(80,0,0);
+    transition:all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.3s;
+    position: relative;
+}
+
+
+.boton-barra-navegacion::after{
+    content:'';
+    position:absolute;
+    background-color: rgb(80,0,0);
+    width: 0%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition:all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.3s;
+    z-index: -1;
+    /* border-radius: 1vw; */
+}
+
+.boton-barra-navegacion:hover{
+    color: var(--color-texto-imagen-presentacion);
+    cursor: default;
+}
+
+.boton-barra-navegacion:hover::after{
+    width:100%;
+}
+
+.lista-opciones-desplegables{
+    position: absolute;
+    list-style-type: none;
+    list-style: none;
+
+    transition:all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.3s;
+    visibility: hidden;
+    max-height: 0;
+}
+
+.lista-opciones-desplegables li{
+    width: 20vw;
+    background-color: rgb(80,0,0);
+    color: var(--color-texto-imagen-presentacion);
+    font-size: 0.9vw;
+    padding: 0.8vw 0 0.8vw 0.6vw;    
+    /* border: 1px solid var(--color-texto-imagen-presentacion); */
+    border-collapse: collapse;
+    cursor:pointer;
+    border-bottom: 2px solid rgb(232, 251, 251);
+    border-left: 2px solid rgb(232, 251, 251);
+    border-right: 2px solid rgb(232, 251, 251);
+}
+
+.lista-opciones-desplegables li:first-child{
+    border-top: 2px solid rgb(232, 251, 251);
+}
+
+
+#opciones-CPP{
+    top:14.4vh;
+    left: 57.75vw;
+}
+
+#opciones-DH{
+    top:14.4vh;
+    left: 70.35vw;
+}
+
+#opciones-EE{
+    top:14.4vh;
+    left: 78.4vw;
+}
+
+
+.boton-barra-navegacion:hover + .lista-opciones-desplegables, .lista-opciones-desplegables:hover{
+    animation-name: desplegar;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-delay: 0.4s;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+@keyframes desplegar{
+    
+    0%{
+        visibility: visible;
+    }
+
+    100%{
+        visibility: visible;
+    }
+
 }
