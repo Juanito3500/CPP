@@ -127,13 +127,17 @@ nav{
     /* border: 1px solid var(--color-texto-imagen-presentacion); */
     border-collapse: collapse;
     cursor:pointer;
-    border-bottom: 2px solid rgb(232, 251, 251);
-    border-left: 2px solid rgb(232, 251, 251);
-    border-right: 2px solid rgb(232, 251, 251);
+    border-bottom: 2px solid rgba(0,0,0,0);
+    border-left: 2px solid rgba(0,0,0,0);
+    border-right: 2px solid rgba(0,0,0,0);
+}
+
+.lista-opciones-desplegables li:hover{
+    font-size: 1vw;
 }
 
 .lista-opciones-desplegables li:first-child{
-    border-top: 2px solid rgb(232, 251, 251);
+    border-top: 7px solid rgba(0,0,0,0);
 }
 
 
@@ -152,16 +156,18 @@ nav{
     left: 78.4vw;
 }
 
+#opciones-PE{
+    left: -20vw;
+    top: 35vh;
+}
 
-.boton-barra-navegacion:hover + .lista-opciones-desplegables, .lista-opciones-desplegables:hover{
+.boton-barra-navegacion:hover + .lista-opciones-desplegables, li:hover + ul, .lista-opciones-desplegables:hover{
     animation-name: desplegar;
     animation-duration: 0.2s;
     animation-timing-function: linear;
     animation-delay: 0.4s;
     animation-iteration-count: infinite;
 }
-
-
 
 
 @keyframes desplegar{
